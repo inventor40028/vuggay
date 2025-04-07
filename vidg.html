@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+VUG WORLD...
+        </title>
+        <style>
+   
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bold;
+    font-size: 50px;
+    color: yellow;
+}
+
+body {
+    background-color: black;
+    color: yellow;
+    text-align: center;
+    margin: 0;
+    font-family: 'Bebas Neue', cursive;
+    overflow-x: hidden;
+     
+}
+.video-container {
+            display: inline-block;
+            position: relative;
+            margin: 10px ;
+            border: 1px solid rgb(41, 41, 39);
+  border-radius: 10px;
+  padding: 1px;
+  background-color: #000; /* black background */
+  width: 310px;
+  height: auto;
+
+  text-align: center;
+        }
+button{
+    background:    #ebbe14;
+background:   (#dfe20c 50%);
+border:        1px solid #000000;
+border-radius: 5px;
+width:         196px;
+height:        auto;
+color:         rgb(0, 0, 0);
+display:       inline-block;
+font:          italic bold 30px/50px "Roboto", sans-serif;
+text-align:    center;
+text-shadow:   3px 2px #d9d907;
+}
+button:hover{
+  background:    #ccc90b;
+background:    linear-gradient(#fbff00, #ffe600);
+border:        1px solid #000000;
+border-radius: 17px;
+width:         200px;
+height:        auto;
+color:         #eeff00;
+display:       inline-block;
+font:          italic bold 30px/50px "Roboto", sans-serif;
+text-align:    center;
+text-shadow:   3px 2px #000000;
+box-shadow: 0 0 15px rgba(255, 255, 0, 1); /* Brighter glow on hover */
+transform: scale(1.05); /* Slight zoom effect */
+}
+.video
+    {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: auto;
+    border: 2px solid yellow; /* Border color */
+    border-radius: 2px; /* Rounded corners */
+    box-shadow: 0 0 7px rgba(255, 255, 0, 0.7); /* Glowing effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+}
+.video:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+    box-shadow: 0 0 25px rgba(255, 255, 0, 1); /* Brighter glow on hover */
+}
+
+h1{
+  font:"Luckiest Guy", sans-serif;
+}
+
+        
+
+.emoji {
+            position: absolute;
+            font-size: 15px;
+            pointer-events: none;
+            opacity: 1;
+            animation: burst 1s ease-out forwards;
+        }
+
+        @keyframes burst {
+            0% {
+                opacity: 1;
+                transform: scale(1) translate(0, 0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.5) translate(var(--x), var(--y));
+            }
+        }
+        img {
+    width: 85%; /* Adjust the percentage as needed */
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    margin: auto;
+    border: 1px solid yellow; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+    box-shadow: 0 0 3px rgba(255, 255, 0, 0.7); /* Glowing effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 0 15px rgba(255, 255, 0, 1); /* Brighter glow on hover */
+}
+
+
+.carousel-container::-webkit-scrollbar { 
+    height: 10px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: yellow;
+    border-radius: 10px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.carousel-container {
+    width: 95%;
+    max-width: 1000px;
+    height: 500px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 15px;
+    scroll-snap-type: x mandatory;
+    position: relative;
+    background: rgba(0, 0, 0, 0.9);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.carousel img {
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    scroll-snap-align: center;
+    filter: blur(3px);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.carousel img.active {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px yellow;
+    z-index: 3;
+    filter: blur(0);
+    opacity: 1;
+}
+
+.h4 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: yellow;
+}
+
+.carousel .h4.active {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px yellow;
+    z-index: 3;
+    filter: blur(0);
+    opacity: 1;
+}
+
+.content-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 📱 Mobile Styles */
+@media screen and (max-width: 768px) {
+  .carousel-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: yellow;
+    border-radius: 10px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+        .carousel-container {
+            width: 310px;
+            height: 370px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 10px;
+            scroll-snap-type: x mandatory;
+            position: relative;
+            background: rgba(0, 0, 0, 0.9);
+            white-space: nowrap;
+            align-items: center; 
+        }
+
+        .carousel {
+            display: flex;
+            gap: 10px;
+            transition: transform 1s ease-in-out;
+        }
+
+        .carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* vertical centering */
+    height: 100%; /* or fixed height if needed */
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+
+        .carousel img {
+    width: 270px;
+    height: 200px;
+    object-fit: cover; /* crops and fills while keeping center */
+    object-position: center; /* centers the crop */
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    scroll-snap-align: center;
+    filter: blur(3px);
+    opacity: 0.6;
+}
+
+        
+        
+        .carousel img.active {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px yellow;
+            position: relative;
+            z-index: 3;
+            filter: blur(0);
+            opacity: 1;
+        }
+
+        .h4 {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: yellow;
+        }
+        .carousel .h4.active{
+            transform: scale(1.2);
+            box-shadow: 0 0 20px yellow;
+         
+            z-index: 3;
+            filter: blur(0);
+            opacity: 1;
+        }
+        .content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+}
+
+.popup-menu {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: black;
+  border: 2px solid yellow;
+  border-radius: 8px;
+  padding: 10px;
+  display: none;
+  z-index: 999999;
+}
+.popup-menu:hover {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: black;
+  border: 2px solid yellow;
+  border-radius: 8px;
+  padding: 10px;
+  display: none;
+  z-index: 999999;
+}
+.popup-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-menu ul li {
+  margin: 10px 0;
+}
+
+.popup-menu ul li a {
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+}
+.popup-menu ul li a:hover{
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  background-color: yellow;
+  border-radius: 50px;
+}
+
+</style>
+    </head>
+    <body>
+        <center>
+            <p>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <h4 style="color: yellow; text-align: center; margin-bottom: 10px;">FREE PREMUIM VIDEOS</h4>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <h3 style="color: yellow; text-align: center; margin-bottom: 10px;">🔥LATEST🔥</h3>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                          <h4 style="color: yellow; text-align: center; margin-bottom: 10px;">👇THESE ARE NOT ADS👇</h4>
+                      
+                        <table>
+                            <tbody>
+                                
+                <div class="carousel-container">
+                    <div class="carousel">
+                      <div class="carousel-item">
+                        <a href="https://terabox.com/s/1pHsLRyMSr7RxaEnvohsTqg" ><img src="https://od.lk/s/MzVfNTg1NTI3Mjlf/20250407_031521.gif" alt="Image 1"></a>
+                        <h4></h4>
+                    </div>
+                        <div class="carousel-item">
+                            <a href="https://terabox.com/s/1oMneUCSvKvZYfIDP3BZAmQ" ><img src="https://od.lk/s/MzVfNTg1NTI3NDBf/20250407_031615.gif" alt="Image 1"></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="https://terabox.com/s/1UUAhFr2bk7j0nEjM9wK5Hg" ><img src="https://od.lk/s/MzVfNTg1NTI3NDJf/20250407_031642.gif" alt="Image 2"></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="https://terabox.com/s/1n6nmXZ_SiKiq8Ut1uVR4lw" > <img src="https://od.lk/s/MzVfNTg1NTI3NDhf/20250407_031708.gif" alt="Image 3"></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="https://terabox.com/s/113fxI3t1443VBXjnKqS5Rw" > <img src="https://od.lk/s/MzVfNTg1NTI3NTRf/20250407_031743.gif" alt="Image 4"></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="https://terabox.com/s/1aTYkwQwVbaRvLOk_BNaYJw" ><img src="https://od.lk/s/MzVfNTg1NTI3NTlf/20250407_031853.gif" alt="Image 4"></a>
+                        </div>
+                       
+                </div>
+        
+                            </div> 
+                       </div>
+                       </tbody>
+                       </table>
+                       <div style="display: flex; flex-direction: column; align-items: center;">
+                        <h4 style="color: yellow; text-align: center; margin-bottom: 10px;">please wait while the others load👇</h4>
+                    
+                    
+            <button1 class="button1" onclick="togglePopup()" style="position: fixed; z-index: 999999; bottom: 0px; right: 0px; background: yellow; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">📂 Menu</button1>
+            
+            <div id="popupMenu" class="popup-menu">
+              <ul>
+                <li><a href="full.html">HOME</a></li>
+                <li><a href="vidg.html">FREE PREMUIM VIDEOS</a></li>
+                <li><a href="comics.html">COMIC WEBSITE</a></li>
+                <li><a href="picsg.html">HOT PICS</a></li>
+                <li><a href="https://www.terabox.com/referral/4400725621199">POWERED BY TERABOX</a>
+                </li>
+                <li><a href="apps.html">DOWLOAD VUG APP</a></li>
+                <li><script type="text/javascript">
+                    atOptions = {
+                        'key' : '108fa94244896e77f92dc761e38f8e39',
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/108fa94244896e77f92dc761e38f8e39/invoke.js"></script>
+            </li>
+              </ul>
+            </div>
+            <div id="google_translate_element"></div>
+            <script type="text/javascript">
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+              }
+            </script>
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+        
+        
+        
+        
+            
+              <script>
+           
+                function togglePopup() {
+          const menu = document.getElementById("popupMenu");
+          menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+                let currentIndex = 0;
+                let direction = 1; // 1 = forward, -1 = backward
+                const items = document.querySelectorAll(".carousel-item");
+                const images = document.querySelectorAll(".carousel img");
+                const totalImages = images.length;
+                const container = document.querySelector(".carousel-container");
+            
+                let scrollTimer = null;
+                let autoScrollInterval = setInterval(autoScroll, 2000);
+            
+                function updateCarousel() {
+                    images.forEach(img => img.classList.remove("active"));
+                    const image = images[currentIndex];
+                    image.classList.add("active");
+            
+                    const scrollTo = image.offsetLeft - container.clientWidth / 2 + image.clientWidth / 2;
+                    container.scrollTo({ left: scrollTo, behavior: 'smooth' });
+                }
+            
+                function autoScroll() {
+                    currentIndex += direction;
+            
+                    if (currentIndex >= totalImages - 1 || currentIndex <= 0) {
+                        direction *= -1; // Reverse direction
+                    }
+            
+                    updateCarousel();
+                }
+            
+                container.addEventListener("scroll", () => {
+                    clearInterval(autoScrollInterval);
+                    clearTimeout(scrollTimer);
+            
+                    scrollTimer = setTimeout(() => {
+                        autoScrollInterval = setInterval(autoScroll, 2500);
+                    }, 1000);
+            
+                    let centerX = container.scrollLeft + container.clientWidth / 2;
+                    let closestIndex = 0;
+                    let minDistance = Infinity;
+            
+                    images.forEach((img, index) => {
+                        let imgCenter = img.offsetLeft + img.clientWidth / 2;
+                        let distance = Math.abs(centerX - imgCenter);
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closestIndex = index;
+                        }
+                    });
+            
+                    images.forEach(img => img.classList.remove("active"));
+                    images[closestIndex].classList.add("active");
+                    currentIndex = closestIndex;
+                });
+            
+                updateCarousel();
+        
+                let startX = 0;
+        let isSwiping = false;
+        
+        container.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            isSwiping = true;
+            clearInterval(autoScrollInterval); // pause auto-scroll
+        });
+        
+        container.addEventListener("touchmove", (e) => {
+            if (!isSwiping) return;
+            let currentX = e.touches[0].clientX;
+            let diffX = startX - currentX;
+            container.scrollLeft += diffX;
+            startX = currentX;
+        });
+        
+        container.addEventListener("touchend", () => {
+            isSwiping = false;
+            scrollTimer = setTimeout(() => {
+                autoScrollInterval = setInterval(autoScroll, 3000); // resume auto-scroll
+            }, 1000);
+        });
+        
+                document.addEventListener("click", function(event) {
+                    let emojis = ["🍑", "🍆", "🔞", "🥵"];
+                    let numPerEmoji = 5; // 5 of each emoji
+                    let totalEmojis = emojis.length * numPerEmoji; // 20 emojis per click
+            
+                    for (let i = 0; i < totalEmojis; i++) {
+                        let emoji = document.createElement("div");
+                        emoji.textContent = emojis[i % emojis.length]; // Cycle through emojis
+                        emoji.classList.add("emoji");
+            
+                        // Random movement
+                        let angle = Math.random() * 2 * Math.PI; 
+                        let distance = Math.random() * 120 + 30; // Random spread distance
+                        let x = Math.cos(angle) * distance + "px";
+                        let y = Math.sin(angle) * distance + "px";
+            
+                        emoji.style.setProperty("--x", x);
+                        emoji.style.setProperty("--y", y);
+            
+                        // Set position at click location
+                        emoji.style.left = `${event.clientX}px`;
+                        emoji.style.top = `${event.clientY}px`;
+            
+                        document.body.appendChild(emoji);
+            
+                        setTimeout(() => {
+                            emoji.remove();
+                        }, 1000);
+                    }
+                });
+            </script>
+                <center>
+                  <p>
+                  <h5>IF PREVIEWS DONT LOAD TRY REFRESHING THE PAGE </h5>
+                  
+                  <div id="google_translate_element"></div>
+                  <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    }
+                  </script>
+                  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+         
+        
+        
+        
+<h1>VUG GAY FULL VIDEOS</h1>
+
+
+
+<div class="video-container">
+    <p>👇PREVIEW VIDEO👇</p>
+    <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2F1024terabox.com%2Fs%2F1zKqlmAC98Y83IIs4VaUbIw" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                         <p>Time Traveller Goes Back in Time</p>       
+  <a href="https://terabox.com/s/1zKqlmAC98Y83IIs4VaUbIw"><button>FULL VIDEO</button></a> 
+ </p>
+ </div>
+
+
+
+
+
+    <div class="video-container">
+       <p>👇PREVIEW VIDEO👇</p>
+       <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2F1024terabox.com%2Fs%2F1J_8lh18muLkt0Eu6a9Cc_g" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                            <p>...</p>       
+     <a href="https://1024terabox.com/s/1J_8lh18muLkt0Eu6a9Cc_g"><button>FULL VIDEO</button></a> 
+    </p>
+    </div>
+
+
+
+
+    <div class="video-container">
+       <p>👇PREVIEW VIDEO👇</p>
+       <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2F1024terabox.com%2Fs%2F1yBRsnCHJUIBXfTSEN00tdg" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+         <p>...</p>       
+     <a href="https://1024terabox.com/s/1yBRsnCHJUIBXfTSEN00tdg"><button>FULL VIDEO</button></a> 
+    </p>
+    </div>
+
+
+
+    <div class="video-container">
+       <p>👇PREVIEW VIDEO👇</p>
+       <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2F1024terabox.com%2Fs%2F1rwqv4eie65PZFzgBssxFYw" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>    
+                        <p>...</p>       
+     <a href="https://terabox.com/s/1rwqv4eie65PZFzgBssxFYw"><button>FULL VIDEO</button></a> 
+    </p>
+    </div>
+
+
+    <div class="video-container">
+       <p>👇PREVIEW VIDEO👇</p>
+       <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2F1024terabox.com%2Fs%2F14jTmvwk8ivZYSNoVKCbhvQ" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                            <p>...</p>       
+     <a href="https://terabox.com/s/14jTmvwk8ivZYSNoVKCbhvQ"><button>FULL VIDEO</button></a> 
+    </p>
+    </div>
+
+
+
+    <div class="video-container">
+       <p>👇PREVIEW VIDEO👇</p>
+       <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2F1024terabox.com%2Fs%2F1v437IRz9KsVCDY3aDSSkww" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+         <p>...</p>       
+     <a href="https://terabox.com/s/1v437IRz9KsVCDY3aDSSkww"><button>FULL VIDEO</button></a> 
+    </p>
+    </div>
+
+
+
+
+    <div class="video-container">
+       <p>👇PREVIEW VIDEO👇</p>
+       <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2F1024terabox.com%2Fs%2F1QI25bPK9nUtewNUK5z4S0g" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+           <p>...</p>       
+     <a href="https://1024terabox.com/s/1QI25bPK9nUtewNUK5z4S0g"><button>FULL VIDEO</button></a> 
+    </p>
+    </div>
+
+
+
+    <div class="video-container">
+       <p>👇PREVIEW VIDEO👇</p>
+       <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2F1024terabox.com%2Fs%2F1fuAvYo7pFYktxh3Sd8oMjw" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+           <p>...</p>       
+     <a href="https://terabox.com/s/1fuAvYo7pFYktxh3Sd8oMjw"><button>FULL VIDEO</button></a> 
+    </p>
+    </div>
+
+
+
+    <div class="video-container">
+       <p>👇PREVIEW VIDEO👇</p>
+       <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1vBESbl5ODJyfL-ND7XC1uw" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                            <p>They Fuck In The Wilderness</p>       
+     <a href="https://terabox.com/s/1vBESbl5ODJyfL-ND7XC1uw"><button>FULL VIDEO</button></a> 
+    </p>
+    </div>
+
+
+
+
+    <div class="video-container">
+       <p>👇PREVIEW VIDEO👇</p>
+       <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1HQcuFQkGCV24wlpPiMhsGA" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                     <p>JKream Bareback </p>       
+     <a href="https://terabox.com/s/1HQcuFQkGCV24wlpPiMhsGA"><button>FULL VIDEO</button></a> 
+    </p>
+    </div>
+
+
+
+    <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1zxJNx3HQRqfw4cZHtxLYvA" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                              <p>JWorkers had a hot fu......  </p>       
+      <a href="https://terabox.com/s/1zxJNx3HQRqfw4cZHtxLYvA"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1rL0cC5CltC8p1vOfMvha4w" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                              <p>Kash Daddy Dre Ba....</p>       
+      <a href="https://terabox.com/s/1rL0cC5CltC8p1vOfMvha4w"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+
+     <script type="text/javascript">
+	atOptions = {
+		'key' : '2861af1e66d3dd401fce81dc7cc6c61e',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/2861af1e66d3dd401fce81dc7cc6c61e/invoke.js"></script>
+
+
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1kRroh4zCHZ_GFFnvryP-XA" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                              <p>Hook, Night Stick & M..... </p>       
+      <a href="https://terabox.com/s/1kRroh4zCHZ_GFFnvryP-XA"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1rB6qWJGHkpsIbiGN0eLvjA" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+             <p>GAY VIDS </p>       
+      <a href="https://terabox.com/s/1rB6qWJGHkpsIbiGN0eLvjA"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+
+   
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1ihkgA05-ySDUbvyRpDheQg" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                              <p>GAY VIDS </p>       
+      <a href="https://terabox.com/s/1ihkgA05-ySDUbvyRpDheQg"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1W1G3Fei_C4jtrkP3G3K4kQ" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                              <p>Kash Daddy Dre Fucks Smurf Cre..... </p>       
+      <a href="https://terabox.com/s/1W1G3Fei_C4jtrkP3G3K4kQ"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+
+  
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1W1G3Fei_C4jtrkP3G3K4kQ" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+              <p>GAY VIDS </p>       
+      <a href="https://terabox.com/s/1lXGEfMKQMNTBs7EEzXsdwg"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F17hQJUZKUgUkg9uMYy7eDcQ" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                      <p>GAY VIDS </p>       
+      <a href="https://terabox.com/s/17hQJUZKUgUkg9uMYy7eDcQ"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+
+    
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1i4Iy7451a3IGM1TgnfLoXw" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+      <p>GAY VIDS </p>       
+      <a href="https://terabox.com/s/1i4Iy7451a3IGM1TgnfLoXw"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1MjiiFjuYG8D8jqlHcWfQmQ" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+       <p>Three hung black ga..... </p>       
+      <a href="https://terabox.com/s/1MjiiFjuYG8D8jqlHcWfQmQ"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F14O6K5NdacUY5dWB3crLqTw" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                              <p>Fucking Mike sto....</p>       
+      <a href="https://terabox.com/s/14O6K5NdacUY5dWB3crLqTw"><button>FULL VIDEO</button></a> 
+       
+     </div>
+
+
+   
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1T-3shcQ18GshNnjxbgjOXw" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                              <p>GAY PORN </p>       
+      <a href="https://terabox.com/s/1T-3shcQ18GshNnjxbgjOXw"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+     <div class="video-container">
+        <p>👇PREVIEW VIDEO👇</p>
+        <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1Ku33x8xAlgW4bFhPBxCEYA" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+    <p>GAY PORN....</p>       
+      <a href="https://terabox.com/s/1Ku33x8xAlgW4bFhPBxCEYA"><button>FULL VIDEO</button></a> 
+     </p>
+     </div>
+
+     
+
+
+   
+            
+          
+            <div class="video-container">
+               <p>👇PREVIEW VIDEO👇</p>
+              <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1tM1Qrl03t7xRcJTkh8F3BQ" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                             
+             <a href="https://terabox.com/s/1tM1Qrl03t7xRcJTkh8F3BQ"><button>FULL VIDEO</button></a> 
+            </p>
+            </div>
+  
+            
+         
+            <div class="video-container">
+               <p>👇PREVIEW VIDEO👇</p>
+           <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F18-C73mKPy4Xq20Qk10HWfQ" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                             
+             <a href="https://terabox.com/s/18-C73mKPy4Xq20Qk10HWfQ"><button>FULL VIDEO</button></a> 
+            </p>
+            </div>
+  
+         
+            <div class="video-container">
+               <p>👇PREVIEW VIDEO👇</p>
+             <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1SH1bug0uFDZyz0-IgNxcgA" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                             
+             <a href="https://terabox.com/s/1SH1bug0uFDZyz0-IgNxcgA"><button>FULL VIDEO</button></a> 
+            </p>
+            </div>
+  
+       
+            <div class="video-container">
+               <p>👇PREVIEW VIDEO👇</p>
+             <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2Fterabox.com%2Fs%2F1jyj2e9zuWH6A2dCzjhoWjw" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                             
+             <a href="https://terabox.com/s/1jyj2e9zuWH6A2dCzjhoWjw"><button>FULL VIDEO</button></a> 
+            </p>
+            </div>
+  
+ 
+            <div class="video-container">
+                <iframe class="video" src="https://terabox.tech/play.html?url=https%3A%2F%2F1024terabox.com%2Fs%2F1h75upF11Dz_ffGfALWXHfw" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>               PREVIEW
+                <p>
+                 <a href="https://terabox.com/s/1h75upF11Dz_ffGfALWXHfw"><button>FULL VIDEO</button></a> 
+                </p>
+                </div>
+     
+
+
+
+        </center>
+
+    </body>
+</html>
